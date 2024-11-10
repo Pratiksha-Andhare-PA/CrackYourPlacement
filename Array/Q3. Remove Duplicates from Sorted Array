@@ -1,0 +1,42 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+
+        int cnt = 1;
+        for(int i=1;i<nums.size();i++){
+            if(nums[i-1] != nums[i]){
+                nums[cnt] = nums[i];
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+};
+
+/*
+
+<============= Complexity Analysis =============>
+
+1. Brute Force:
+
+Create a set and push all elements of array into the set. 
+It'll store unique elements without changing order
+(as it's already sorted array.) => O(N*logN)
+
+Create a vector copy all elements of set to this vector. => O(N)
+
+Update elements of given array with this new vector by traversing. => O(N)
+
+Return size of set/new vector.
+
+TC => O(N*logN)
+SC => O(N)
+
+2. Optimal:
+Maintain a cnt variable and traverse the array.
+Check if adjacent elements are not equal then update the nums[cnt] with current element and keep incrementing the cnt.
+
+TC => O(N)
+SC => O(1)
+
+*/

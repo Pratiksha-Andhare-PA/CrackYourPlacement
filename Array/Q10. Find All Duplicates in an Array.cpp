@@ -30,13 +30,13 @@ SC => O(1)
 TC => O(N*logN)
 SC => O(1)
 
-3) Maintain frequency of each element in a vector.
+3) Maintain the frequency of each element in a vector.
 Print the elements having frequency 2 (or) more than 1.
 TC => O(2N)
 SC => O(N)
 
-4) Traverse the array and change the sign of the elements with idx nums[abs(nums[i])-1]
-If not visited & if the element is already -ve means it's visited twice, print it.
+4) Traverse the array and change the sign of the elements with idx nums[abs(nums[i])-1].
+If not visited & if the element is already -ve, which means it's visited twice, print it.
 TC => O(N)
 SC => O(1)
 

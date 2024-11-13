@@ -48,7 +48,7 @@ c. Inside it, there will be the second loop(say j) that will run from i+1 to n-1
 d. Before the second loop, we will declare another HashSet to store the array elements as we intend to search for the third element using this HashSet.
 e. Inside the second loop, we will calculate the value of the third element i.e. -(arr[i]+arr[j]).
 f. If the third element exists in the HashSet, we will sort these 3 values i.e. arr[i], arr[j], and the third element, and insert it in the set data structure declared in step 1.
-g. After that, we will insert the j-th element i.e. arr[j] in the HashSet as we only want to insert those array elements that are in between indices i and j.
+g. After that, we will insert the jth element i.e. arr[j] in the HashSet as we only want to insert those array elements that are in between indices i and j.
 h. Finally, we will return a list of triplets stored in the set data structure.
 
 TC => O(N2 * log(no. of unique triplets))

@@ -1,0 +1,66 @@
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        sort(nums.begin(), nums.end());
+
+        vector<vector<int>> ans;
+        for(int i = 0; i < n; i++){
+            if(i > 0 && nums[i] == nums[i-1]) continue; //skip duplicates
+            for(int j = i+1; j < n; j++){
+                if(j > i+1 && nums[j] == nums[j-1]) continue;
+
+                int k = j+1, l = n-1;
+                while(k < l){
+                    long long sum = nums[i];
+                    sum += nums[j];
+                    sum += nums[k];
+                    sum += nums[l];
+
+                    if(sum == target){
+                        vector<int> temp = {nums[i], nums[j], nums[k], nums[l]};
+                        ans.push_back(temp);
+
+                        k++, l--;
+
+                        while(k < l && nums[k] == nums[k-1]) k++; //skip duplicates
+                        while(k < l && nums[l] == nums[l+1]) l--; //skip duplicates 
+                    }
+
+                    else if(sum < target) k++;
+
+                    else l--;
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+
+/*
+
+<================= Approaches =================>
+
+1) Brute Force:
+4 for loops & set to maintain the quadruplets. 
+store it by sorting to avoid duplicates.
+
+TC => O(N^4)
+SC => O(2 * no. of the quadruplets)
+
+2) Sort the array
+2 loops and 2 ptrs.
+Use set to handle duplicates.
+
+TC => O(N3*log(M))
+SC => O(2 * no. of the quadruplets)+O(N)
+
+3) Sort the array
+Use 2 loops & 2 ptrs.
+Handle duplicates by checking with adjacent elements.
+
+TC => O(N^3)
+SC => O(no. of quadruplets)
+
+*/

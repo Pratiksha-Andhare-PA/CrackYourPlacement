@@ -34,7 +34,13 @@ public:
 
 /**
 
-# Complexity:
+# Approaches:
+
+1) DFS:
+TC => O(M*N)
+SC => O(M*N)
+
+2) BFS:
 TC => O(M*N)
 SC => O(M*N)
 
